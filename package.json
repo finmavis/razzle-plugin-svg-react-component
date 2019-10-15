@@ -1,0 +1,27 @@
+{
+  "name": "razzle-plugin-svg-react-component",
+  "version": "1.0.0",
+  "description": "Razzle plugin to import SVG as ReactComponent",
+  "main": "index.js",
+  "author": "Fin Mavis <fin.mavis@yahoo.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@svgr/webpack": "^4.3.3",
+    "babel-plugin-named-asset-import": "^0.3.4",
+    "razzle-dev-utils": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finmavis/razzle-plugin-svg-react-component.git"
+  },
+  "keywords": [
+    "razzle",
+    "plugin",
+    "svg",
+    "as",
+    "react",
+    "component",
+    "inline svg"
+  ]
+}
