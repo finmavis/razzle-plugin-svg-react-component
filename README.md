@@ -15,7 +15,7 @@ This package contains a plugin to `import` SVG as `ReactComponent`.
   if you're using `npm`
 
   ```
-  npm install razzle-plugin-svg-react-component
+  npm install razzle-plugin-svg-react-component --save
   ```
 
 - create a `razzle.config.js` file in root directory of project (next to the package.json) and put this content inside it
