@@ -6,9 +6,8 @@ module.exports = function modify(baseConfig) {
   const config = Object.assign({}, baseConfig);
 
   const babelLoaderConfig = loaderFinder('babel-loader');
-  const javascriptRule = config.module.rules.find(babelLoaderConfig);
-
-  javascriptRule.use.find(babelLoaderConfig).options.plugins.push([
+  const javascriptRule = config.module.rules.find(babelLoaderConfig).use.find(babelLoaderConfig).options;
+  const svgConfig = [
     require.resolve('babel-plugin-named-asset-import'),
     {
       loaderMap: {
@@ -17,7 +16,13 @@ module.exports = function modify(baseConfig) {
         },
       },
     },
-  ]);
+  ]
+
+  if (javascriptRule.plugins) {
+    javascriptRule.plugins.push(svgConfig);
+  } else {
+    javascriptRule.plugins = [svgConfig];
+  }
 
   return config;
 };
