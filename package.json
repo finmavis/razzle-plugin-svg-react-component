@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@svgr/webpack": "^4.3.3",
+    "@svgr/webpack": "^5.4.0",
     "babel-plugin-named-asset-import": "^0.3.4",
     "razzle-dev-utils": "^3.0.0"
   },
