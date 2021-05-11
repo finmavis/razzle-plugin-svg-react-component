@@ -2,20 +2,22 @@
 
 This package contains a plugin to `import` SVG as `ReactComponent`.
 
+Notes: This plugin is only compatible with Razzle v3.3.0 and above. If your project using an older version of Razzle, you could install the 1.0.3 version of this plugin. See [below](#older-version-razzle-below-v3.3.0) explanation for an older version of Razzle.
+
 ## Usage in Razzle Projects
 
-- Install `razzle-plugin-svg-react-component`
+- Install `razzle-plugin-svg-react-component` and `@svgr/webpack`
 
   if you're using `yarn`
 
   ```
-  yarn add razzle-plugin-svg-react-component
+  yarn add razzle-plugin-svg-react-component @svgr/webpack
   ```
 
   if you're using `npm`
 
   ```
-  npm install razzle-plugin-svg-react-component --save
+  npm install razzle-plugin-svg-react-component @svgr/webpack --save
   ```
 
 - create a `razzle.config.js` file in root directory of project (next to the package.json) and put this content inside it
@@ -55,6 +57,56 @@ const App = () => (
   </div>
 );
 ```
+
+## Usage with Typescript
+
+If you encounter this error message, `Module '"*.svg"' has no exported member 'ReactComponent'`.
+
+You need to add declaration type for SVG to your `declarations.d.ts` like below:
+
+```
+declare module '*.svg' {
+  import * as React from 'react';
+
+  export const ReactComponent: React.FunctionComponent<React.SVGProps<
+    SVGSVGElement
+  > & { title?: string }>;
+
+  const src: string;
+  export default src;
+}
+```
+
+Notes: If your project doesn't have `declarations.d.ts` file, you could create a new one inside `src` folder.
+
+## Older version Razzle (below v3.3.0)
+
+## Usage in Razzle Projects
+
+- Install `razzle-plugin-svg-react-component@1.0.3`
+
+  if you're using `yarn`
+
+  ```
+  yarn add razzle-plugin-svg-react-component@1.0.3
+  ```
+
+  if you're using `npm`
+
+  ```
+  npm install razzle-plugin-svg-react-component@1.0.3 --save
+  ```
+
+- create a `razzle.config.js` file in root directory of project (next to the package.json) and put this content inside it
+
+  ```
+  // razzle.config.js
+  module.exports = {
+    plugins: [
+      'svg-react-component'
+    ],
+  };
+  ```
 
 ## Usage with `razzle-plugin-typescript`
 
