@@ -1,6 +1,6 @@
 {
   "name": "razzle-plugin-svg-react-component",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Razzle plugin to import SVG as ReactComponent",
   "main": "index.js",
   "author": "Fin Mavis <fin.mavis@yahoo.com>",
