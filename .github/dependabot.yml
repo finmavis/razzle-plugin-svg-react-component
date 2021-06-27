@@ -1,0 +1,17 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "22:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: razzle-dev-utils
+    versions:
+    - 3.3.11
+    - 3.3.12
+    - 3.3.13
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
