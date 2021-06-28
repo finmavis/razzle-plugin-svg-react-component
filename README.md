@@ -6,18 +6,18 @@ Notes: This plugin is only compatible with Razzle v3.3.0 and above. If your proj
 
 ## Usage in Razzle Projects
 
-- Install `razzle-plugin-svg-react-component` and `@svgr/webpack`
+- Install `razzle-plugin-svg-react-component`
 
   if you're using `yarn`
 
   ```
-  yarn add razzle-plugin-svg-react-component @svgr/webpack
+  yarn add razzle-plugin-svg-react-component
   ```
 
   if you're using `npm`
 
   ```
-  npm install razzle-plugin-svg-react-component @svgr/webpack --save
+  npm install razzle-plugin-svg-react-component --save
   ```
 
 - create a `razzle.config.js` file in root directory of project (next to the package.json) and put this content inside it
@@ -78,6 +78,20 @@ declare module '*.svg' {
 ```
 
 Notes: If your project doesn't have `declarations.d.ts` file, you could create a new one inside `src` folder.
+
+## Usage with `razzle-plugin-typescript`
+
+- specify `useBabel: true` option in typescript plugin
+
+  ```
+  // razzle.config.js
+  module.exports = {
+    plugins: [
+      { name: "typescript", options: { useBabel: true } },
+      'svg-react-component',
+    ],
+  };
+  ```
 
 ## Older version Razzle (below v3.3.0)
 
